@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-image: url(https://i.pinimg.com/736x/c1/6e/b9/c16eb9b9bb638942822ea74d026c10d6.jpg);
+    background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+}
+
+.ribbon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#solid-ribbon {
+    width: 50px;
+    animation: bobbing 1s infinite;
+    cursor: pointer; 
+    will-change: transform;
+}
+
+#solid-ribbon:not(.no-bobbing):hover {
+    cursor: pointer;
+}
+
+#solid-ribbon.no-bobbing {
+    animation: none; 
+    cursor: auto; 
+}
+
+@keyframes bobbing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+#message-container {
+    background-color: rgb(255, 216, 233);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    transition: height 0.7s ease-in-out;
+    max-height: calc(100vh - 100px);
+    min-width: 350px;
+    border-radius: 20px;
+    will-change: height;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+#message-container::-webkit-scrollbar {
+    display: none;
+}
+
+#message {
+    width: 90%;
+    padding: 10px 20px 20px 20px; 
+}
