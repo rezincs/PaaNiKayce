@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const ribbon = document.querySelector("#solid-ribbon");
     const ribbon_container = document.querySelector(".ribbon-container");
     const msg_container = document.querySelector("#message-container");
+    const audio = document.querySelector("#myAudio");
 
     const md = window.markdownit({ html: true });
     loadMessage(md);
@@ -29,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 msg_container.style.overflowY = "scroll"; 
             }, 10);
             ribbon.classList.add("no-bobbing");
+            audio.play();
         } else {
-            
         }
     });
 });
